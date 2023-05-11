@@ -1,0 +1,44 @@
+// 自定义主题
+// 详见 https://www.iviewui.com/docs/guide/theme
+@import '~view-design/src/styles/index.less';
+
+/*
+  修改 iview component 相關 style,
+  去 '~view-design/src/styles/' 尋找相對應的 .less 文件放回自己的專案做修改後覆蓋
+  或是自己尋找相對應 class 做覆蓋
+*/
+@import './components/card.less';
+@import './components/menu.less';
+@import './components/form.less';
+@import './components/modal.less';
+@import './components/dropdown.less';
+@import './components/button.less';
+@import './components/input.less';
+@import './components/back-top.less';
+
+
+// iview 變數覆蓋
+// Color
+@primary-color: #fc5000;
+@error-color: #f44336;
+
+// Base
+@font-family            : 'Microsoft JhengHei',Arial,sans-serif;
+
+
+// Background color
+@menu-dark-title: #191a23;
+@menu-dark-active-bg: #101117;
+@table-td-stripe-bg: #fff4ef;
+@table-td-hover-bg: #fff4ef;
+
+// Shadow
+@shadow-color           : rgba(0, 0, 0, .3);
+@shadow-up              : 0 -2px 6px @shadow-color;
+@shadow-down            : 0 2px 6px @shadow-color;
+@shadow-left            : -2px 0 6px @shadow-color;
+@shadow-right           : 2px 0 6px @shadow-color;
+
+// 自定義變數
+@border-radius-large: 10px;
+@shadow-menu-item: 0 0 10px 1px fade(@primary-color, 40%);

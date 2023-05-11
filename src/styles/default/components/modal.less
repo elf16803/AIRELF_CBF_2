@@ -1,0 +1,26 @@
+@modal-prefix-cls: ~"@{css-prefix}modal";
+@confirm-prefix-cls: ~"@{css-prefix}modal-confirm";
+
+.@{modal-prefix-cls} {
+  // 將 modal 設置為置中
+  top: 0;
+
+  &-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width:@screen-sm) {
+    width: 95% !important;
+  }
+}
+
+.@{confirm-prefix-cls} {
+  &-head{
+    &-title{
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+  }
+}

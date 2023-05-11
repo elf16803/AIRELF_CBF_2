@@ -1,0 +1,65 @@
+@menu-prefix-cls: ~"@{css-prefix}menu";
+@menu-dropdown-item-prefix-cls: ~"@{menu-prefix-cls}-horizontal .@{menu-prefix-cls}-submenu .@{select-dropdown-prefix-cls} .@{menu-prefix-cls}-item";
+
+.@{menu-prefix-cls} {
+  // vertical
+
+  &-vertical &-item,
+  &-vertical &-submenu-title{
+    padding: 10px;
+    margin: 0 15px;
+    letter-spacing: 1px;
+  }
+
+  &-light&-vertical &-item{
+    border-radius: @border-radius-base;
+
+    &-active:not(.@{menu-prefix-cls}-submenu){
+      // active 樣式
+      color: @white;
+      background: @primary-color;
+      box-shadow: @shadow-menu-item;
+      z-index: 2;
+
+      &:after{
+        // 清除 active 預設樣式右側的線條
+        content: '';
+        display: none;
+      }
+    }
+  }
+
+  &-light&-vertical &-opened{
+    .@{menu-prefix-cls}-submenu-title{
+    // 1級菜單打開時樣式
+    background-color: ~`colorPalette("@{normal-color}", 1)`;
+    border-radius: @border-radius-base;
+    }
+  }
+
+  // dark 模式
+  &-dark&-vertical &-item, &-dark&-vertical &-submenu-title{
+    border-radius: @border-radius-base;
+    color: @menu-dark-subsidiary-color;
+
+    &-active:not(.@{menu-prefix-cls}-submenu),
+    &-active:not(.@{menu-prefix-cls}-submenu):hover{
+      // 一級菜單的 hover 樣式
+      background: @primary-color;
+      box-shadow: @shadow-menu-item;
+    }
+    &:hover{
+      background: @menu-dark-title;
+    }
+  }
+
+  // 一級菜單展開時的樣式
+  &-dark&-vertical &-opened{
+    background: @menu-dark-title;
+
+    .@{menu-prefix-cls}-submenu-title{
+      background-color: @menu-dark-active-bg;
+      border-radius: @border-radius-base;
+    }
+  }
+}

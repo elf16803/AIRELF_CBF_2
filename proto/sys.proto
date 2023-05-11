@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option csharp_namespace = "AIRELF_CB";
+
+package sys;
+
+
+service sys {
+
+  //登入
+  rpc Login (LoginReg) returns (sysReply);
+  //二段式驗證
+  rpc LoginGAuth (LoginReg) returns (sysReply);
+  //更新TOKEN
+  rpc RefreshToken(LoginReg) returns(sysReply);
+
+  //系統時間
+  rpc sysDate (sysDateReg) returns (sysReply);
+
+   //驗證碼圖示
+  rpc GetVailIMG(VailReg) returns(sysReply);
+  
+  //清關公司名稱
+  rpc GETCBNAME(CBNAMEReg) returns(sysReply);
+}
+
+// request 登入
+message LoginReg {
+  string logindata = 1;
+  string signatrue = 2;
+  string VerifyCode=3;
+}
+
+message VailReg{
+	string v1=1;
+	string v2=2;
+}
+
+message sysDateReg{
+}
+message CBNAMEReg{
+}
+
+//  reply 
+message sysReply {
+  string result = 1;
+}

@@ -1,0 +1,25 @@
+.infinite-list{
+  &-row{
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  &-row + &-row{
+    border-top: 1px solid #e8eaec;
+  }
+
+  &-col{
+    display: flex !important;
+    line-height: 1.8;
+
+    &-label{
+      font-weight: 900;
+    }
+
+    &-content{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

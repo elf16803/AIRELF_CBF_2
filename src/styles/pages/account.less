@@ -1,0 +1,58 @@
+.page-account{
+  height: 100vh;
+  position: relative;
+
+  background-image: url('~@/assets/images/account-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &::after{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+  }
+
+  &-wrap{
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    padding: 100px 50px;
+    background-color: #fff;
+
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
+    @media screen and (max-width:@screen-xs) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &-header{
+    text-align: center;
+    margin-bottom: 50px;
+
+    &-logo > img{
+        height: 70px;
+    }
+
+    &-title{
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: rgb(153, 153, 153)
+    }
+  }
+
+  &-content{
+    &-verify-button img{
+      width: 100%;
+      height: 38px;
+      object-fit: contain;
+    }
+  }
+}

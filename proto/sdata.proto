@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+option csharp_namespace = "AIRELF_CB";
+
+package sdata;
+
+service sdata {
+
+  //清關費
+  rpc GetCAC (CACReg) returns (sdataReply);
+  //主動報關稅
+  rpc GETXGC (XGCReg) returns (sdataReply);
+  rpc GETXGCDT (XGCDTReg) returns (sdataReply);
+
+  //X2關稅
+  rpc GETX2C (X2CReg) returns (sdataReply);
+  rpc GETX2CDT (X2CDTReg) returns (sdataReply);
+  rpc IMPX2F (X2FReg) returns (sdataReply);
+
+  rpc GETIMPRT(IMPRTReg) returns(sdataReply);
+
+  rpc REPORTCKF(CKFReg) returns(sdataReply);
+
+}
+
+// request 清關費
+message CACReg {
+  int32 year = 1;
+  int32 month = 2;
+}
+
+// request 主動報關稅
+message XGCReg {
+  int32 year = 1;
+  int32 month = 2;
+}
+
+message XGCDTReg{
+	string dd=1;
+}
+
+// request X2關稅
+message X2CReg {
+  int32 year = 1;
+  int32 month = 2;
+}
+
+// request X2關稅
+message X2CDTReg {
+  string mawb = 1; //主單號
+}
+
+// request Import X2關稅
+message X2FReg {
+  string file = 1; //檔案BASE64格式 , excel
+  string exname = 2;
+}
+
+message IMPRTReg{
+
+}
+
+message CKFReg{
+	int32 categ=1; 
+	int32 year =2;
+	int32 month=3;
+}
+
+//  reply 
+message sdataReply {
+  string result = 1;
+}
